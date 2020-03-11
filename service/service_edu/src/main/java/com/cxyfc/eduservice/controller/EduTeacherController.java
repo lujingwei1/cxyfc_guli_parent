@@ -36,13 +36,6 @@ public class EduTeacherController {
     @ApiOperation("查询所有讲师")
     @GetMapping
     public R getAllTeacher() {
-
-        try {
-            int a = 10/0;
-        }catch(Exception e) {
-            throw new GuliException(20001,"出现了除以0异常");
-        }
-
         List<EduTeacher> list = teacherService.list(null);
         return R.ok().data("items", list);
     }
@@ -87,6 +80,12 @@ public class EduTeacherController {
         long total = pageParam.getTotal();
         //返回的列表
         List<EduTeacher> records = pageParam.getRecords();
+        try {
+            int a = 10/0;
+        }catch(Exception e) {
+            throw new GuliException(20001,"出现了除以0异常");
+        }
+
 
         return R.ok().data("total", total).data("items", records);
     }
