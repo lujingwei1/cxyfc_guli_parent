@@ -83,7 +83,7 @@ public class EduTeacherController {
         try {
             int a = 10/0;
         }catch(Exception e) {
-            throw new GuliException(20001,"出现了除以0异常");
+            throw new GuliException(20001,"出现了除以0异常（告诉前台的应该是服务器繁忙。。。）");
         }
 
 
